@@ -13,23 +13,24 @@
       }
 
       body {
-        font-family: 'Atkinson Hyperlegible', sans-serif;
+        font-family: "Atkinson Hyperlegible", sans-serif;
         padding: 1em;
         background-color: snow;
         color: #111;
+        min-width: 240px;
       }
 
       h1 {
         text-align: center;
         font-size: 1.5rem;
-        margin-bottom: .5em;
+        margin-bottom: 0.5em;
       }
 
       #textInput {
         display: block;
         max-width: 100%;
         margin: auto;
-        padding: .5em;
+        padding: 0.5em;
         font-family: inherit;
       }
 
@@ -41,6 +42,13 @@
         margin: auto;
       }
 
+      @media (max-width: 640px) {
+        .formActions {
+          flex-direction: column;
+          gap: 1em;
+        }
+      }
+
       #textInputForm input {
         padding: 0.5em 1.5em;
         background-color: snow;
@@ -48,7 +56,7 @@
         border-radius: 20px;
         cursor: pointer;
         max-width: 11em;
-        font-size: .9rem;
+        font-size: 0.9rem;
         margin: 0 1em;
       }
 
@@ -71,7 +79,7 @@
       #resultsList li {
         line-height: 1.2;
         border: 1px solid #2225;
-        padding: .5em .75em;
+        padding: 0.5em 0.75em;
         border-radius: 5px;
       }
 
@@ -85,11 +93,10 @@
       }
 
       #enVrac {
-        font-size: .9rem;
+        font-size: 0.9rem;
         padding: 2em;
         text-align: center;
       }
-
     </style>
   </head>
   <body>
@@ -99,17 +106,31 @@
       <textarea name="textInput" id="textInput" cols="100" rows="16"></textarea>
       <div class="formActions">
         <input type="reset" value="Reset" />
-        <input type="number" name="minchars" placeholder="min chars" value="3" steps="1" min="1">
-        <input type="number" name="minoccurrence" placeholder="min occurence" value="2" steps="1" min="1">
+        <input
+          type="number"
+          name="minchars"
+          placeholder="min chars"
+          value="3"
+          steps="1"
+          min="1"
+        />
+        <input
+          type="number"
+          name="minoccurrence"
+          placeholder="min occurence"
+          value="2"
+          steps="1"
+          min="1"
+        />
         <input type="submit" value="Check" />
       </div>
     </form>
 
-    <hr>
+    <hr />
 
     <ul id="resultsList"></ul>
 
-    <hr>
+    <hr />
 
     <p id="enVrac"></p>
 
