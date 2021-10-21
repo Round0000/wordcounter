@@ -79,7 +79,7 @@ const sortByCount = () => {
   uniqueWords.sort(compare);
 };
 
-const displayResults = (minchars = 3, minoccurrence = 2) => {
+const displayResults = (minchars, minoccurrence) => {
   console.log(minchars + " " + minoccurrence);
   uniqueWords.forEach((word) => {
     if (

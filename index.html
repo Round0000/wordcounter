@@ -94,9 +94,20 @@
 
       #enVrac {
         font-size: 0.9rem;
-        padding: 2em;
+        padding: 1em;
         text-align: center;
+        border: 1px solid #2225;
       }
+
+      #enVrac:empty {
+        border: none;
+      }
+
+      #resultsList:empty + hr {
+        display: none;
+      }
+
+
     </style>
   </head>
   <body>
